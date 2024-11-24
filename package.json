@@ -1,0 +1,18 @@
+{
+  "name": "html-to-docx",
+  "version": "0.0.1",
+  "main": "src/index.js",
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "docx": "^9.0.3",
+    "html-entities": "^2.5.2",
+    "html-minifier": "^4.0.0",
+    "lodash": "^4.17.21",
+    "node-html-parser": "^6.1.13",
+    "sharp": "^0.33.5"
+  }
+}
