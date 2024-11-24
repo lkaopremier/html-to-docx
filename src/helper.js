@@ -1,6 +1,6 @@
 import { parse as htmlParser } from 'node-html-parser'
 import { minify } from 'html-minifier'
-import sharp from 'sharp'
+import sizeOf from 'image-size'
 
 export function normalizeHtml(content) {
   const elm = htmlParser(content)
@@ -301,8 +301,8 @@ export async function imageBase64ToBuffer(base64Content) {
     return undefined
   }
 
-  const metadata = await sharp(buffer).metadata()
-  const { width, height } = metadata
+  const dimensions = sizeOf(buffer)
+  const { width, height } = dimensions
 
   if (!width || !height) {
     return undefined

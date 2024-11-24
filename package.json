@@ -1,18 +1,26 @@
 {
-  "name": "html-to-docx",
-  "version": "0.0.1",
+  "name": "@lkaopremier/html-to-docx",
+  "version": "0.0.2",
   "main": "src/index.js",
   "type": "module",
   "keywords": [],
-  "author": "",
+  "author": "lkapremier",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "docx": "^9.0.3",
     "html-entities": "^2.5.2",
     "html-minifier": "^4.0.0",
+    "image-size": "^1.1.1",
     "lodash": "^4.17.21",
-    "node-html-parser": "^6.1.13",
-    "sharp": "^0.33.5"
-  }
+    "node-html-parser": "^6.1.13"
+  },
+  "bin": {
+    "html-to-docx": "bin/cli.js"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "types": "./src/index.d.ts"
 }
