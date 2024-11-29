@@ -13,6 +13,7 @@ import {
 } from './helper.js'
 import lodash from 'lodash'
 import { AlignmentType, HeadingLevel } from 'docx'
+import { decode } from 'html-entities'
 
 function getStyle(node) {
   const style = {}
@@ -351,10 +352,10 @@ function applyStyle(paragraph) {
 }
 
 function trimContent(content, isFirst, isLast, isSingle) {
-  if (isSingle) return content.trim()
-  if (isFirst) return content.trimStart()
-  if (isLast) return content.trimEnd()
-  return content
+  if (isSingle) return decode(content.trim())
+  if (isFirst) return decode(content.trimStart())
+  if (isLast) return decode(content.trimEnd())
+  return decode(content)
 }
 
 function trimParagraph(paragraph) {

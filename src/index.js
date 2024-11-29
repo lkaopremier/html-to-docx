@@ -14,7 +14,6 @@ import {
 import { nodeTree } from './tree.js'
 import lodash from 'lodash'
 import { getListItemNumber } from './helper.js'
-import { decode } from 'html-entities'
 
 async function transform(lines, option) {
   if (!option) option = {}
@@ -51,7 +50,7 @@ async function transform(lines, option) {
             ...style,
             children: [
               new TextRun({
-                text: decode(line.run[0].content),
+                text: line.run[0].content,
                 ...style,
               }),
             ],
@@ -105,7 +104,7 @@ async function transform(lines, option) {
                 case 'text':
                   return new TextRun({
                     ...(item.style ?? {}),
-                    text: decode(item.content),
+                    text: item.content,
                   })
 
                 case 'image':
